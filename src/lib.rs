@@ -1,4 +1,4 @@
-#![crate_id = "staticfile"]
+#![crate_name = "staticfile"]
 #![deny(missing_doc)]
 #![feature(phase)]
 
@@ -11,9 +11,8 @@ extern crate http;
 extern crate iron;
 extern crate mount;
 
-use iron::{Request, Response, Middleware, Alloy};
+use iron::{Request, Response, Middleware, Alloy, Status, Continue, Unwind};
 use iron::mixin::{GetUrl, Serve};
-use iron::middleware::{Status, Continue, Unwind};
 use mount::OriginalUrl;
 
 /// The static file-serving `Middleware`.
